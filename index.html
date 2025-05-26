@@ -11,25 +11,39 @@
       margin-top: 100px;
       background-color: #fce4ec;
     }
+
     h1 {
       color: #880e4f;
     }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     button {
-      font-size: 20px;
-      margin: 10px;
-      padding: 10px 20px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
+
     .yes-btn {
       background-color: #81c784;
       color: white;
+      font-size: 24px;
+      padding: 15px 30px;
     }
+
     .no-btn {
       background-color: #e57373;
       color: white;
+      font-size: 16px;
+      padding: 10px 20px;
     }
+
     img {
       margin-top: 20px;
       width: 250px;
@@ -38,21 +52,45 @@
 </head>
 <body>
   <h1>Will you go out on a date with me? ❤️</h1>
-  <button class="yes-btn" onclick="showCat()">Yes</button>
-  <button class="no-btn" onclick="wrongAnswer()">No</button>
+
+  <div class="button-container">
+    <button class="yes-btn" onclick="showCat()">Yes</button>
+    <button class="no-btn" onclick="shrinkNo()">No</button>
+  </div>
+
   <div id="response"></div>
 
   <script>
+    let noFontSize = 16; // initial font size in px
+    let noPadding = 10;
+    let yesFontSize = 24;
+    let yesPadding = 15;
+
     function showCat() {
       document.body.innerHTML = `
         <h1>Yay! 🥳</h1>
         <p>You made me the happiest person today!</p>
-        <img src = "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Happy Cat" />
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Happy Cat" />
       `;
     }
 
-    function wrongAnswer() {
-      alert("Oops! Wrong answer 😼 Try again...");
+    function shrinkNo() {
+      const noBtn = document.querySelector('.no-btn');
+      const yesBtn = document.querySelector('.yes-btn');
+
+      // Shrink "No" button
+      noFontSize = Math.max(8, noFontSize - 2);
+      noPadding = Math.max(4, noPadding - 2);
+      noBtn.style.fontSize = `${noFontSize}px`;
+      noBtn.style.padding = `${noPadding}px ${noPadding * 2}px`;
+
+      // Grow "Yes" button
+      yesFontSize += 2;
+      yesPadding += 2;
+      yesBtn.style.fontSize = `${yesFontSize}px`;
+      yesBtn.style.padding = `${yesPadding}px ${yesPadding * 2}px`;
+
+      noBtn.innerText = "Try again 😼";
     }
   </script>
 </body>
