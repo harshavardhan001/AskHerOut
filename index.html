@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Date Invitation</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #fce4ec;
+    }
+    h1 {
+      color: #880e4f;
+    }
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .yes-btn {
+      background-color: #81c784;
+      color: white;
+    }
+    .no-btn {
+      background-color: #e57373;
+      color: white;
+    }
+    img {
+      margin-top: 20px;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you go out on a date with me? ❤️</h1>
+  <button class="yes-btn" onclick="showCat()">Yes</button>
+  <button class="no-btn" onclick="wrongAnswer()">No</button>
+  <div id="response"></div>
+
+  <script>
+    function showCat() {
+      document.body.innerHTML = `
+        <h1>Yay! 🥳</h1>
+        <p>You made me the happiest person today!</p>
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Happy Cat" />
+      `;
+    }
+
+    function wrongAnswer() {
+      alert("Oops! Wrong answer 😼 Try again...");
+    }
+  </script>
+</body>
+</html>
