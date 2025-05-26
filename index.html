@@ -8,12 +8,19 @@
     body {
       font-family: 'Arial', sans-serif;
       text-align: center;
-      margin-top: 100px;
+      margin-top: 80px;
       background-color: #fce4ec;
     }
 
     h1 {
       color: #880e4f;
+      font-size: 32px;
+    }
+
+    .details {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #4a148c;
     }
 
     .button-container {
@@ -51,7 +58,13 @@
   </style>
 </head>
 <body>
-  <h1>Will you go out on a date with me? ❤️</h1>
+  <h1>Heyyyyyyyyyy Khushiiiiiiii, will you go out on a date with me? 🌻❤️</h1>
+  <h2> 🥺👉👈 <h2>
+  <div class="details">
+    📍 Helen's Place<br>
+    📅 30th May 2025<br>
+    🕗 9:00 PM
+  </div>
 
   <div class="button-container">
     <button class="yes-btn" onclick="showCat()">Yes</button>
@@ -61,16 +74,17 @@
   <div id="response"></div>
 
   <script>
-    let noFontSize = 16; // initial font size in px
+    let noFontSize = 16;
     let noPadding = 10;
     let yesFontSize = 24;
     let yesPadding = 15;
 
     function showCat() {
       document.body.innerHTML = `
-        <h1>Yay! 🥳</h1>
-        <p>You made me the happiest person today!</p>
-        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Happy Cat" />
+        <h1>Yaayyyyyyyy! Lessss goooo!!!🥳</h1>
+        <p>Aura +10000</p>
+        <p>You're now legally required to have an amazing time with me! 🙃💌</p>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWluMXRpZzlmNnhma3FveWQyN3luZmR6MW84ZXNncmg4YjI2cTgxMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/W1hd3uXRIbddu/giphy.gif" alt="Happy Cat" />
       `;
     }
 
@@ -78,19 +92,17 @@
       const noBtn = document.querySelector('.no-btn');
       const yesBtn = document.querySelector('.yes-btn');
 
-      // Shrink "No" button
       noFontSize = Math.max(8, noFontSize - 2);
       noPadding = Math.max(4, noPadding - 2);
       noBtn.style.fontSize = `${noFontSize}px`;
       noBtn.style.padding = `${noPadding}px ${noPadding * 2}px`;
 
-      // Grow "Yes" button
       yesFontSize += 2;
       yesPadding += 2;
       yesBtn.style.fontSize = `${yesFontSize}px`;
       yesBtn.style.padding = `${yesPadding}px ${yesPadding * 2}px`;
 
-      noBtn.innerText = "Try again 😼";
+      noBtn.innerText = "Really?? 🥺";
     }
   </script>
 </body>
